@@ -2,9 +2,9 @@
   <v-app app>
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list>
-        <v-list-tile v-for="comp in comps" :key="comp.name" :to="{name:comp.route}">
+        <v-list-tile v-for="demo in demos" :key="demo.name" :to="{name:demo.route}">
           <v-list-tile-content>
-            <v-list-tile-title>{{comp.name}}</v-list-tile-title>
+            <v-list-tile-title>{{demo.name}}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -14,7 +14,7 @@
       <v-toolbar-title>Vuetify Component Usage</v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <v-container>
+      <v-container grid-list-xl>
         <router-view></router-view>
       </v-container>
     </v-content>
@@ -26,11 +26,15 @@ export default {
   name: 'App',
   data () {
     return {
-      drawer: true,
-      comps: [
+      drawer: null,
+      demos: [
         {
           name: 'Expansion Panel',
           route: 'expansion-panel'
+        },
+        {
+          name: 'Card',
+          route: 'card'
         }
       ]
     }
