@@ -2,9 +2,9 @@
   <v-app app>
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list>
-        <v-list-tile v-for="comp in comps" :key="comp.name" :to="{name:comp.route}">
+        <v-list-tile v-for="demo in demos" :key="demo.name" :to="{name:demo.route}">
           <v-list-tile-content>
-            <v-list-tile-title>{{comp.name}}</v-list-tile-title>
+            <v-list-tile-title>{{demo.name}}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       drawer: null,
-      comps: [
+      demos: [
         {
           name: 'Expansion Panel',
           route: 'expansion-panel'
@@ -35,6 +35,10 @@ export default {
         {
           name: 'List',
           route: 'list'
+        },
+        {
+          name: 'Card',
+          route: 'card'
         }
       ]
     }
