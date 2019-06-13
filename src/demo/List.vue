@@ -2,7 +2,7 @@
   <v-layout row wrap>
     <v-flex xs12 md6>
       <v-list class="elevation-3">
-        <v-list-tile v-for="(item, key) in list1" :key="key" avatar @click>
+        <v-list-tile v-for="(item, key) in list1" :key="key" avatar @click.stop>
           <v-list-tile-action>
             <v-icon v-if="item.icon" color="pink">{{item.icon}}</v-icon>
           </v-list-tile-action>
@@ -20,7 +20,7 @@
         <template v-for="(item,i) in list2">
           <v-subheader :key="i" v-if="item.header">{{item.header}}</v-subheader>
           <v-divider :key="i" inset v-else-if="item.divider"></v-divider>
-          <v-list-tile :key="i" avatar v-else @click>
+          <v-list-tile :key="i" avatar v-else @click.stop>
             <v-list-tile-avatar>
               <img :src="item.avatar">
             </v-list-tile-avatar>
@@ -42,7 +42,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       list1: [
         {

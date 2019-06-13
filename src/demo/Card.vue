@@ -40,21 +40,23 @@
     <v-flex xs12 md6>
       <v-card>
         <v-img :src="img" height="200">
-          <v-layout column fill-height>
-            <v-spacer></v-spacer>
-            <v-card-title>
-              <v-btn dark icon>
-                <v-icon>chevron_left</v-icon>
-              </v-btn>
+          <v-container fill-height class="pa-1">
+            <v-layout column fill-height>
               <v-spacer></v-spacer>
-              <v-btn dark icon>
-                <v-icon>edit</v-icon>
-              </v-btn>
-              <v-btn dark icon>
-                <v-icon>more_vert</v-icon>
-              </v-btn>
-            </v-card-title>
-          </v-layout>
+              <v-card-title class="pa-1">
+                <v-btn dark icon>
+                  <v-icon>chevron_left</v-icon>
+                </v-btn>
+                <v-spacer></v-spacer>
+                <v-btn dark icon>
+                  <v-icon>edit</v-icon>
+                </v-btn>
+                <v-btn dark icon>
+                  <v-icon>more_vert</v-icon>
+                </v-btn>
+              </v-card-title>
+            </v-layout>
+          </v-container>
         </v-img>
         <v-card-text>
           Lorem ipsum dolor sit amet consectetur

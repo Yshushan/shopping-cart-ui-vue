@@ -1,7 +1,7 @@
 <template>
-  <v-layout row>
-    <v-flex xs12 md8 offset-md2>
-      <div class="pa-3 d-flex justify-between align-center">
+  <v-layout row wrap>
+    <v-flex xs12 md6>
+      <div class="pa-3 d-flex justify-space-between align-center">
         <v-btn @click="expandAll">all</v-btn>
         <v-btn @click="collapseAll">none</v-btn>
         <span>{{panel}}</span>
@@ -17,12 +17,36 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-flex>
+    <v-flex xs12 md6>
+      <v-expansion-panel inset>
+        <v-expansion-panel-content v-for="item of items" :key="item.title">
+          <template v-slot:header>
+            <div class="title">{{item.title}} {{item.expand}}</div>
+          </template>
+          <v-card>
+            <v-card-text>{{item.text}}</v-card-text>
+          </v-card>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-flex>
+    <v-flex xs12 md6>
+      <v-expansion-panel popout focusable>
+        <v-expansion-panel-content v-for="item of items" :key="item.title">
+          <template v-slot:header>
+            <div class="title">{{item.title}} {{item.expand}}</div>
+          </template>
+          <v-card>
+            <v-card-text class="grey lighten-3">{{item.text}}</v-card-text>
+          </v-card>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+    </v-flex>
   </v-layout>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       panel: [false, false, false, false],
       items: [
@@ -50,10 +74,10 @@ export default {
     }
   },
   methods: {
-    collapseAll() {
+    collapseAll () {
       this.panel = this.panel.map(i => false)
     },
-    expandAll() {
+    expandAll () {
       this.panel = this.panel.map(i => true)
     }
   }

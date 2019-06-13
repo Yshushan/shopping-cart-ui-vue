@@ -15,7 +15,9 @@
     </v-toolbar>
     <v-content>
       <v-container grid-list-xl>
-        <router-view></router-view>
+        <v-slide-x-reverse-transition mode="out-in">
+          <router-view></router-view>
+        </v-slide-x-reverse-transition>
       </v-container>
     </v-content>
   </v-app>
@@ -24,7 +26,7 @@
 <script>
 export default {
   name: 'App',
-  data() {
+  data () {
     return {
       drawer: null,
       demos: [
@@ -39,6 +41,10 @@ export default {
         {
           name: 'Card',
           route: 'card'
+        },
+        {
+          name: 'Alert',
+          route: 'alert'
         }
       ]
     }
