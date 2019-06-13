@@ -11,10 +11,10 @@
     </v-navigation-drawer>
     <v-toolbar app clipped-left>
       <v-toolbar-side-icon @click="drawer=!drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Vuetify Component Usage</v-toolbar-title>
+      <v-toolbar-title>Vuetify Components Usage</v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <v-container>
+      <v-container grid-list-xl>
         <router-view></router-view>
       </v-container>
     </v-content>
@@ -24,13 +24,17 @@
 <script>
 export default {
   name: 'App',
-  data () {
+  data() {
     return {
-      drawer: true,
+      drawer: null,
       comps: [
         {
           name: 'Expansion Panel',
           route: 'expansion-panel'
+        },
+        {
+          name: 'List',
+          route: 'list'
         }
       ]
     }
