@@ -45,6 +45,14 @@ export default {
         {
           name: 'Alert',
           route: 'alert'
+        },
+        {
+          name: 'Button',
+          route: 'button'
+        },
+        {
+          name: 'Text Field',
+          route: 'text-field'
         }
       ]
     }

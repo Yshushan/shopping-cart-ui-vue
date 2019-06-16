@@ -5,6 +5,8 @@ import ExpansionPanel from './demo/ExpansionPanel'
 import List from './demo/List'
 import Card from './demo/Card'
 import Alert from './demo/Alert'
+import Button from './demo/Button'
+import TextField from './demo/TextField'
 
 Vue.use(Router)
 
@@ -31,6 +33,16 @@ export default new Router({
       path: '/demo/alert',
       name: 'alert',
       component: Alert
+    },
+    {
+      path: '/demo/btn',
+      name: 'button',
+      component: Button
+    },
+    {
+      path: '/demo/text-field',
+      name: 'text-field',
+      component: TextField
     }
   ]
 })

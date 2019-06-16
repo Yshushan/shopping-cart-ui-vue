@@ -66,6 +66,24 @@
         </v-card-text>
       </v-card>
     </v-flex>
+    <v-flex xs6>
+      <v-card>
+        <v-img :src="uniqlo.url"></v-img>
+        <v-list class="px-2">
+          <v-list-tile-content>
+            <v-list-tile-title class>{{uniqlo.name}}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list>
+        <v-card-actions>
+          <span class="red--text title mr-2">￥{{uniqlo.price}}</span>
+          <span class="grey--text caption">已售{{uniqlo.sales}}</span>
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon color="red">shopping_cart</v-icon>
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-flex>
   </v-layout>
 </template>
 
@@ -80,7 +98,13 @@ export default {
         { title: 'fasdqrf', subtitle: 'faqerqwfasdflqkjwerilsdhflasdfasdfqwer', action: false },
         { title: 'fasdsqrqf', subtitle: 'faqerqwfasdflqkjwerilsdhflasdfasdfqwer', action: false },
         { title: 'fasfqrq', subtitle: 'faqerqwfasdflqkjwerilsdhflasdfasdfqwer', action: false }
-      ]
+      ],
+      uniqlo: {
+        url: require('../assets/images/uniqlo/01/main.jpg'),
+        name: '女装 (UT) SUPER MARIO印花T恤(短袖) 420006 优衣库UNIQLO',
+        price: 59,
+        sales: 1255
+      }
     }
   }
 }
